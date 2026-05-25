@@ -1,11 +1,7 @@
-/* =========================
-   GOOGLE FONT
-========================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* =========================
-   RESET
-========================= */
+
 *{
     margin:0;
     padding:0;
@@ -13,9 +9,7 @@
     font-family:'Poppins',sans-serif;
 }
 
-/* =========================
-   BODY
-========================= */
+
 body{
     background:
     radial-gradient(circle at top left,#172033 0%,#0b1220 40%,#050816 100%);
@@ -23,9 +17,6 @@ body{
     overflow-x:hidden;
 }
 
-/* =========================
-   SCROLLBAR
-========================= */
 ::-webkit-scrollbar{
     width:10px;
 }
@@ -39,17 +30,12 @@ body{
     border-radius:20px;
 }
 
-/* =========================
-   WRAPPER
-========================= */
+
 .wrapper{
     display:flex;
     min-height:100vh;
 }
 
-/* =========================
-   SIDEBAR
-========================= */
 .sidebar{
     width:280px;
     height:100vh;
@@ -104,7 +90,7 @@ body{
     font-size:13px;
 }
 
-/* NAVIGATION */
+
 .sidebar nav{
     display:flex;
     flex-direction:column;
@@ -150,9 +136,6 @@ body{
     box-shadow:0 10px 25px rgba(245,158,11,0.35);
 }
 
-/* =========================
-   MAIN
-========================= */
 .main{
     margin-left:280px;
 
@@ -163,9 +146,7 @@ body{
     padding:35px;
 }
 
-/* =========================
-   TOPBAR
-========================= */
+
 .topbar{
     margin-bottom:30px;
 }
@@ -182,9 +163,7 @@ body{
     font-size:15px;
 }
 
-/* =========================
-   FORM
-========================= */
+
 .form-grid{
     background:rgba(17,24,39,0.85);
 
@@ -208,7 +187,7 @@ body{
     box-shadow:0 20px 40px rgba(0,0,0,0.45);
 }
 
-/* INPUTS */
+
 .form-grid input,
 .form-grid select{
     padding:14px;
@@ -261,9 +240,7 @@ body{
     box-shadow:0 12px 30px rgba(245,158,11,0.35);
 }
 
-/* =========================
-   SALES BUTTON
-========================= */
+
 .sales-area{
     display:flex;
     justify-content:flex-end;
@@ -304,9 +281,7 @@ body{
     box-shadow:0 12px 25px rgba(37,99,235,0.35);
 }
 
-/* =========================
-   TABLE
-========================= */
+
 .table-wrapper{
     overflow-x:auto;
 }
@@ -327,7 +302,7 @@ table{
     box-shadow:0 20px 50px rgba(0,0,0,0.45);
 }
 
-/* HEAD */
+
 table th{
     background:#1e293b;
 
@@ -344,7 +319,7 @@ table th{
     border-bottom:1px solid rgba(255,255,255,0.06);
 }
 
-/* BODY */
+
 table td{
     padding:18px;
 
@@ -357,20 +332,17 @@ table td{
     border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
-/* HOVER */
+
 table tr:hover{
     background:rgba(255,255,255,0.03);
 }
 
-/* EMPTY */
+
 .empty-row{
     padding:25px;
     color:#94a3b8;
 }
 
-/* =========================
-   STATUS COLORS
-========================= */
 .status-normal{
     color:#22c55e;
     font-weight:700;
@@ -386,9 +358,7 @@ table tr:hover{
     font-weight:700;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+
 @media(max-width:1100px){
 
     .sidebar{
@@ -425,5 +395,3 @@ table tr:hover{
 
     .sales-area{
         justify-content:center;
-    }
-}
