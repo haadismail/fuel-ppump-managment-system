@@ -1,11 +1,7 @@
-/* =========================
-   GOOGLE FONT
-========================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* =========================
-   RESET
-========================= */
+
 *{
     margin:0;
     padding:0;
@@ -20,9 +16,7 @@ body{
     overflow-x:hidden;
 }
 
-/* =========================
-   CUSTOM SCROLLBAR
-========================= */
+
 ::-webkit-scrollbar{
     width:10px;
 }
@@ -36,17 +30,13 @@ body{
     border-radius:20px;
 }
 
-/* =========================
-   WRAPPER
-========================= */
+
 .wrapper{
     display:flex;
     min-height:100vh;
 }
 
-/* =========================
-   SIDEBAR
-========================= */
+
 .sidebar{
     width:280px;
     height:100vh;
@@ -118,18 +108,14 @@ body{
     box-shadow:0 10px 25px rgba(245,158,11,0.35);
 }
 
-/* =========================
-   MAIN
-========================= */
+
 .main{
     margin-left:280px;
     width:100%;
     padding:35px;
 }
 
-/* =========================
-   TOPBAR
-========================= */
+
 .topbar{
     margin-bottom:30px;
 }
@@ -146,9 +132,7 @@ body{
     font-size:15px;
 }
 
-/* =========================
-   INPUT BOX
-========================= */
+
 .base-sales-box{
     background:rgba(17,24,39,0.85);
     border:1px solid rgba(255,255,255,0.06);
@@ -204,9 +188,7 @@ body{
     box-shadow:0 12px 30px rgba(245,158,11,0.35);
 }
 
-/* =========================
-   CARDS SECTION
-========================= */
+
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -214,9 +196,7 @@ body{
     margin-bottom:45px;
 }
 
-/* =========================
-   PREMIUM BLOCK CARDS
-========================= */
+
 .card{
     position:relative;
     overflow:hidden;
@@ -238,7 +218,7 @@ body{
     transition:0.35s;
 }
 
-/* GLOW EFFECT */
+
 .card::before{
     content:"";
     position:absolute;
@@ -250,7 +230,7 @@ body{
     right:-80px;
 }
 
-/* HOVER */
+
 .card:hover{
     transform:translateY(-10px) scale(1.02);
     border-color:rgba(245,158,11,0.25);
@@ -258,8 +238,6 @@ body{
     0 25px 45px rgba(0,0,0,0.55),
     0 0 25px rgba(245,158,11,0.12);
 }
-
-/* CARD TITLE */
 .card h3{
     font-size:15px;
     font-weight:600;
@@ -268,8 +246,6 @@ body{
     position:relative;
     z-index:2;
 }
-
-/* BIG VALUE */
 .card p{
     font-size:34px;
     font-weight:800;
@@ -278,18 +254,12 @@ body{
     position:relative;
     z-index:2;
 }
-
-/* SMALL TEXT */
 .card small{
     color:#94a3b8;
     font-size:13px;
     position:relative;
     z-index:2;
 }
-
-/* =========================
-   SECTION TITLES
-========================= */
 .table-section{
     margin-top:50px;
 }
@@ -300,10 +270,6 @@ body{
     color:#f59e0b;
     font-weight:700;
 }
-
-/* =========================
-   TABLE
-========================= */
 table{
     width:100%;
     border-collapse:collapse;
@@ -333,14 +299,12 @@ table td{
     font-size:14px;
 }
 
-/* HOVER */
+
 table tr:hover{
     background:rgba(255,255,255,0.03);
 }
 
-/* =========================
-   STATUS COLORS
-========================= */
+
 .status-normal{
     color:#22c55e;
     font-weight:700;
@@ -351,9 +315,7 @@ table tr:hover{
     font-weight:700;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+
 @media(max-width:1100px){
 
     .sidebar{
@@ -390,4 +352,3 @@ table tr:hover{
         display:block;
         overflow-x:auto;
     }
-}
