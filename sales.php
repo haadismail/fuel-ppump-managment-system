@@ -6,9 +6,7 @@ if ($conn->connect_error) {
     die("Database connection failed");
 }
 
-/* =========================
-   EDIT FETCH
-========================= */
+
 $edit = false;
 $edit_row = [];
 
@@ -24,9 +22,7 @@ if(isset($_GET['edit'])){
     $edit_row = $result_edit->fetch_assoc();
 }
 
-/* =========================
-   UPDATE SALE
-========================= */
+
 if(isset($_POST['update_sale'])){
 
     $id        = $_POST['id'];
@@ -59,9 +55,7 @@ if(isset($_POST['update_sale'])){
     exit();
 }
 
-/* =========================
-   SAVE SALE + UPDATE STOCK
-========================= */
+
 if(isset($_POST['save_sale'])){
 
     $fuel      = $_POST['fuel'];
@@ -112,9 +106,7 @@ if(isset($_POST['save_sale'])){
     exit();
 }
 
-/* =========================
-   DELETE SALE
-========================= */
+
 if(isset($_GET['delete'])){
 
     $id = intval($_GET['delete']);
@@ -128,9 +120,7 @@ if(isset($_GET['delete'])){
     exit();
 }
 
-/* =========================
-   FILTERS
-========================= */
+
 $fuel_filter   = $_GET['fuel'] ?? '';
 $nozzle_filter = $_GET['nozzle'] ?? '';
 $date_filter   = $_GET['date'] ?? '';
