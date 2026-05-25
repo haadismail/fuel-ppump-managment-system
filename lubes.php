@@ -5,9 +5,7 @@ if ($conn->connect_error) {
     die("Database Connection Failed");
 }
 
-/* =========================
-   ADD LUBRICANT
-========================= */
+
 if (isset($_POST['add_lube'])) {
 
     $name = trim($_POST['name'] ?? '');
@@ -50,9 +48,7 @@ if (isset($_POST['add_lube'])) {
     }
 }
 
-/* =========================
-   DELETE
-========================= */
+
 if(isset($_GET['delete'])) {
 
     $id = intval($_GET['delete']);
@@ -66,9 +62,7 @@ if(isset($_GET['delete'])) {
     exit();
 }
 
-/* =========================
-   EDIT FETCH
-========================= */
+
 $edit = false;
 $edit_row = [];
 
@@ -88,9 +82,7 @@ if(isset($_GET['edit'])) {
     $stmt->close();
 }
 
-/* =========================
-   FETCH DATA
-========================= */
+
 $result = $conn->query("
     SELECT * FROM lubricants_inventory
     ORDER BY id DESC
