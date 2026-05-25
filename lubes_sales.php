@@ -6,9 +6,7 @@ if ($conn->connect_error) {
     die("Database Connection Failed");
 }
 
-/* =========================
-   SAVE SALE
-========================= */
+
 if(isset($_POST['save_sale'])){
 
     $customer = trim($_POST['customer_name']);
@@ -69,9 +67,7 @@ if(isset($_POST['save_sale'])){
     exit();
 }
 
-/* =========================
-   DELETE SALE
-========================= */
+
 if(isset($_GET['delete'])){
 
     $id = intval($_GET['delete']);
@@ -108,9 +104,7 @@ if(isset($_GET['delete'])){
     exit();
 }
 
-/* =========================
-   FILTER
-========================= */
+
 $product_filter = $_GET['product'] ?? '';
 $date_filter    = $_GET['date'] ?? '';
 
@@ -138,9 +132,7 @@ $sql .= " ORDER BY id DESC";
 
 $result = $conn->query($sql);
 
-/* =========================
-   FETCH PRODUCTS
-========================= */
+
 $products = $conn->query("
     SELECT *
     FROM lubricants_inventory
