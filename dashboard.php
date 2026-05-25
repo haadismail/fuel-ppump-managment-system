@@ -5,9 +5,9 @@ if ($conn->connect_error) {
     die("Database Connection Failed");
 }
 
-/* =========================
-   SAVE BASE (TOTAL LITERS TILL NOW - MANUAL)
-========================= */
+/* 
+   SAVE  (TOTAL LITERS TILL NOW - MANUAL)
+*/
 if (isset($_POST['update_base_sales'])) {
 
     $base = $_POST['base_sales'] ?? 0;
@@ -54,18 +54,16 @@ if ($res && $res->num_rows > 0) {
     $settings_id = $row['id'];
 }
 
-/* =========================
-   CURRENT METER
-========================= */
+/* 
+   CURRENT METEr*/
 $current = $conn->query("
     SELECT SUM(liters) as current_liters 
     FROM fuel_sales
 ")->fetch_assoc();
 
 $current_liters = $current['current_liters'] ?? 0;
-/* =========================
-   YOUR MAIN LOGIC
-========================= */
+/* 
+    MAIN logic */
 
 $meter_sale = $current_liters - $base_sales;
 
@@ -73,9 +71,7 @@ if ($meter_sale < 0) {
     $meter_sale = 0;
 }
 
-/* =========================
-   AUTO STOCK UPDATE
-========================= */
+
 if ($meter_sale > 0 && $current_liters > 0) {
 
     $conn->query("
@@ -102,14 +98,14 @@ if ($meter_sale > 0 && $current_liters > 0) {
     $base_sales = $current_liters;
 }
 
-/* =========================
-   MONTH
-========================= */
+/*
+   MONTH ki sale
+ */
 $currentMonth = date("Y-m");
 
-/* =========================
-   TOTAL MONTHLY
-========================= */
+/* 
+    MONTHLY ki total sale
+*/
 $monthly = $conn->query("
     SELECT 
         SUM(total) as total_sale,
@@ -119,9 +115,9 @@ $monthly = $conn->query("
     WHERE DATE_FORMAT(sale_date, '%Y-%m') = '$currentMonth'
 ")->fetch_assoc();
 
-/* =========================
+/*
    TODAY TOTAL
-========================= */
+ */
 $today = $conn->query("
     SELECT 
         SUM(total) as total_sale,
@@ -135,9 +131,9 @@ $today_sales = $today['total_sale'] ?? 0;
 $today_profit = $today['total_profit'] ?? 0;
 $today_liters = $today['liters'] ?? 0;
 
-/* =========================
-   YESTERDAY
-========================= */
+/*
+   YESTERDAY ki sale
+ */
 $yesterday = $conn->query("
     SELECT SUM(liters) as liters
     FROM fuel_sales
@@ -148,9 +144,9 @@ $yesterday_liters = $yesterday['liters'] ?? 0;
 
 $daily_difference = $today_liters - $yesterday_liters;
 
-/* =========================
-   PETROL TODAY
-========================= */
+/* 
+   PETROL ki aj ki sale
+ */
 $petrol_today = $conn->query("
     SELECT 
         SUM(total) as total_sale,
@@ -165,9 +161,9 @@ $petrol_today_sale   = $petrol_today['total_sale'] ?? 0;
 $petrol_today_profit = $petrol_today['total_profit'] ?? 0;
 $petrol_today_liters = $petrol_today['liters'] ?? 0;
 
-/* =========================
-   DIESEL TODAY
-========================= */
+/*
+   DIESEL ki aj ki sale
+ */
 $diesel_today = $conn->query("
     SELECT 
         SUM(total) as total_sale,
@@ -182,9 +178,8 @@ $diesel_today_sale   = $diesel_today['total_sale'] ?? 0;
 $diesel_today_profit = $diesel_today['total_profit'] ?? 0;
 $diesel_today_liters = $diesel_today['liters'] ?? 0;
 
-/* =========================
-   PETROL MONTHLY
-========================= */
+/* 
+   PETROL ki montly sale */
 $petrol_monthly = $conn->query("
     SELECT 
         SUM(total) as total_sale,
@@ -199,9 +194,8 @@ $petrol_month_sale   = $petrol_monthly['total_sale'] ?? 0;
 $petrol_month_profit = $petrol_monthly['total_profit'] ?? 0;
 $petrol_month_liters = $petrol_monthly['liters'] ?? 0;
 
-/* =========================
-   DIESEL MONTHLY
-========================= */
+/* 
+   DIESEL ki montly sale  */
 $diesel_monthly = $conn->query("
     SELECT 
         SUM(total) as total_sale,
@@ -216,9 +210,9 @@ $diesel_month_sale   = $diesel_monthly['total_sale'] ?? 0;
 $diesel_month_profit = $diesel_monthly['total_profit'] ?? 0;
 $diesel_month_liters = $diesel_monthly['liters'] ?? 0;
 
-/* =========================
-   INVENTORY
-========================= */
+/* 
+   INVENTORY petrol or doesel
+ */
 $fuel_inventory = $conn->query("
     SELECT 
         fi.tank_name,
@@ -232,14 +226,14 @@ $fuel_inventory = $conn->query("
     GROUP BY fi.id, fi.tank_name, fi.fuel_type, fi.stock
 ");
 
-/* =========================
+/*
    LUBRICANTS
-========================= */
+*/
 
 
-/* =========================
+/* 
    KHATA (TODAY REMAINING)
-========================= */
+*/
 $khata_today = $conn->query("
     SELECT SUM(remaining_amount) AS total_due
     FROM khata
@@ -297,7 +291,7 @@ $lube_inventory = $conn->query("
     <p>Fuel & Lubricants Management System</p>
 </div>
 
-<!-- INPUT -->
+
 <div style="margin:20px 0; padding:15px; background:#f8fafc; border-radius:10px;">
 
     <form method="POST">
