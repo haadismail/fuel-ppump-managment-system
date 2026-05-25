@@ -8,9 +8,9 @@ if ($conn->connect_error) {
 
 $today = date("Y-m-d");
 
-/* =========================
+/* 
    DELETE
-========================= */
+ */
 if(isset($_GET['delete'])) {
 
     $id = intval($_GET['delete']);
@@ -24,9 +24,7 @@ if(isset($_GET['delete'])) {
     exit();
 }
 
-/* =========================
-   MARK REMINDER DONE
-========================= */
+/* */
 if(isset($_GET['done'])) {
 
     $id = intval($_GET['done']);
@@ -41,9 +39,9 @@ if(isset($_GET['done'])) {
     exit();
 }
 
-/* =========================
+/* 
    INSERT
-========================= */
+*/
 if(isset($_POST['save_khata'])) {
 
     $person_name      = trim($_POST['person_name']);
@@ -93,9 +91,9 @@ if(isset($_POST['save_khata'])) {
     exit();
 }
 
-/* =========================
+/* 
    UPDATE
-========================= */
+ */
 if(isset($_POST['update_khata'])) {
 
     $id = intval($_POST['id']);
@@ -145,9 +143,9 @@ if(isset($_POST['update_khata'])) {
     exit();
 }
 
-/* =========================
+/* 
    EDIT FETCH
-========================= */
+*/
 $edit = false;
 $edit_row = [];
 
@@ -164,9 +162,9 @@ if(isset($_GET['edit'])) {
     ")->fetch_assoc();
 }
 
-/* =========================
+/* 
    FILTER SYSTEM
-========================= */
+ */
 $filter = $_GET['filter'] ?? '';
 $search = trim($_GET['search'] ?? '');
 
