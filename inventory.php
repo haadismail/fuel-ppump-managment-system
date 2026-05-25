@@ -5,10 +5,7 @@ if ($conn->connect_error) {
     die("Database Connection Failed");
 }
 
-/* =========================
-   EDIT FETCH
-========================= */
-$edit = false;
+dit = false;
 $edit_row = [];
 
 if(isset($_GET['edit'])){
@@ -23,9 +20,8 @@ if(isset($_GET['edit'])){
     $edit_row = $result_edit->fetch_assoc();
 }
 
-/* =========================
-   UPDATE INVENTORY
-========================= */
+/* 
+   UPDATE inventory */
 if(isset($_POST['update_inventory'])){
 
     $id = $_POST['id'];
@@ -50,9 +46,9 @@ if(isset($_POST['update_inventory'])){
     exit();
 }
 
-/* =========================
+/* 
    ADD INVENTORY
-========================= */
+ */
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['update_inventory'])) {
 
     $tank = $_POST['tank_name'] ?? '';
@@ -72,9 +68,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['update_inventory'])) 
     exit();
 }
 
-/* =========================
-   DELETE INVENTORY
-========================= */
+/*
+   delete inventory
+*/
 if (isset($_GET['delete'])) {
 
     $id = intval($_GET['delete']);
@@ -85,9 +81,8 @@ if (isset($_GET['delete'])) {
     exit();
 }
 
-/* =========================
-   FETCH DATA
-========================= */
+/*
+   FETCH DATA */
 $result = $conn->query("SELECT * FROM fuel_inventory ORDER BY id DESC");
 ?>
 
