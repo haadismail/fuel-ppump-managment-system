@@ -1,0 +1,262 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body{
+    background: radial-gradient(circle at top, #0b1220, #070b14);
+    color:#fff;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.wrapper{
+    display:flex;
+    min-height:100vh;
+}
+
+/* =========================
+   SIDEBAR (SAME STYLE AS DASHBOARD)
+========================= */
+.sidebar{
+    width:260px;
+    background:#0f172a;
+    padding:20px;
+    position:fixed;
+    height:100vh;
+    border-right:1px solid rgba(255,255,255,0.05);
+}
+
+.sidebar .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:30px;
+    font-size:18px;
+    font-weight:700;
+    color:#f59e0b;
+}
+
+.sidebar nav a{
+    display:block;
+    padding:12px 14px;
+    color:#cbd5e1;
+    text-decoration:none;
+    border-radius:10px;
+    margin-bottom:8px;
+    transition:0.3s;
+}
+
+.sidebar nav a:hover{
+    background:rgba(255,255,255,0.06);
+    transform:translateX(5px);
+}
+
+.sidebar nav a.active{
+    background:linear-gradient(135deg,#f59e0b,#f97316);
+    color:#111;
+    font-weight:700;
+}
+
+/* =========================
+   MAIN
+========================= */
+.main{
+    margin-left:260px;
+    padding:25px;
+    width:100%;
+}
+
+/* TITLE */
+h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+/* =========================
+   FILTER BAR
+========================= */
+form[method="GET"]{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    background:rgba(255,255,255,0.03);
+    padding:12px;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+select, input{
+    padding:10px;
+    border-radius:8px;
+    border:none;
+    outline:none;
+    background:#111827;
+    color:#fff;
+}
+
+button{
+    padding:10px 14px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#f59e0b;
+    color:#111;
+    font-weight:600;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#f97316;
+}
+
+/* =========================
+   FORM (KHATA INPUT)
+========================= */
+form[method="POST"]{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    background:rgba(255,255,255,0.03);
+    padding:20px;
+    border-radius:14px;
+    margin-bottom:25px;
+}
+
+form[method="POST"] input{
+    width:100%;
+}
+
+/* Submit button full width */
+form[method="POST"] button{
+    grid-column:span 3;
+    padding:12px;
+    font-size:15px;
+}
+
+/* =========================
+   TABLE DESIGN
+========================= */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(17,24,39,0.8);
+    border-radius:14px;
+    overflow:hidden;
+}
+
+th{
+    background:#1f2937;
+    padding:12px;
+    text-align:left;
+    font-size:13px;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    font-size:14px;
+    color:#cbd5e1;
+}
+
+/* ROW HOVER */
+tr:hover{
+    background:rgba(255,255,255,0.03);
+}
+
+/* =========================
+   STATUS COLORS
+========================= */
+.overdue{
+    background:rgba(220,38,38,0.15);
+}
+
+/* =========================
+   STATUS TAGS
+========================= */
+.status-paid{
+    color:#22c55e;
+    font-weight:700;
+}
+
+.status-pending{
+    color:#f59e0b;
+    font-weight:700;
+}
+
+/* =========================
+   BUTTON STYLES (TABLE)
+========================= */
+td button{
+    padding:6px 10px;
+    font-size:12px;
+    border-radius:6px;
+}
+
+/* EDIT */
+.btn-edit{
+    background:#2563eb;
+    color:#fff;
+}
+
+/* DELETE */
+.btn-delete{
+    background:#dc2626;
+    color:#fff;
+}
+
+/* OK */
+.btn-ok{
+    background:#f97316;
+    color:#fff;
+}
+
+/* WHATSAPP */
+.btn-wa{
+    background:#22c55e;
+    color:#fff;
+}
+
+/* DISABLED */
+button:disabled{
+    background:#374151;
+    color:#9ca3af;
+    cursor:not-allowed;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:1000px){
+    form[method="POST"]{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    form[method="POST"] button{
+        grid-column:span 2;
+    }
+}
+
+@media(max-width:600px){
+    .sidebar{
+        display:none;
+    }
+
+    .main{
+        margin-left:0;
+    }
+
+    form[method="POST"]{
+        grid-template-columns:1fr;
+    }
+
+    form[method="POST"] button{
+        grid-column:span 1;
+    }
+}

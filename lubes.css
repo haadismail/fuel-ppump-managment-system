@@ -1,0 +1,429 @@
+/* =========================
+   GOOGLE FONT
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* =========================
+   RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+body{
+    background:
+    radial-gradient(circle at top left,#172033 0%,#0b1220 40%,#050816 100%);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0f172a;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#f59e0b;
+    border-radius:20px;
+}
+
+/* =========================
+   WRAPPER
+========================= */
+.wrapper{
+    display:flex;
+    min-height:100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar{
+    width:280px;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+
+    padding:25px;
+
+    background:rgba(15,23,42,0.96);
+
+    backdrop-filter:blur(18px);
+
+    border-right:1px solid rgba(255,255,255,0.05);
+
+    box-shadow:0 0 30px rgba(0,0,0,0.5);
+
+    z-index:100;
+}
+
+/* BRAND */
+.brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    margin-bottom:45px;
+}
+
+.brand i{
+    font-size:30px;
+
+    color:#f59e0b;
+
+    background:rgba(245,158,11,0.15);
+
+    padding:14px;
+
+    border-radius:16px;
+
+    box-shadow:0 0 25px rgba(245,158,11,0.35);
+}
+
+.brand h2{
+    font-size:18px;
+    font-weight:700;
+    color:#fff;
+}
+
+.brand small{
+    color:#94a3b8;
+    font-size:13px;
+}
+
+/* NAVIGATION */
+.sidebar nav{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.sidebar nav a{
+    text-decoration:none;
+
+    color:#cbd5e1;
+
+    padding:15px 18px;
+
+    border-radius:14px;
+
+    transition:0.35s;
+
+    font-size:14px;
+    font-weight:500;
+
+    border:1px solid transparent;
+}
+
+.sidebar nav a i{
+    margin-right:10px;
+}
+
+.sidebar nav a:hover{
+    background:rgba(255,255,255,0.06);
+
+    transform:translateX(8px);
+
+    color:#fff;
+}
+
+.sidebar nav a.active{
+    background:linear-gradient(135deg,#f59e0b,#ea580c);
+
+    color:#fff;
+
+    font-weight:700;
+
+    box-shadow:0 10px 25px rgba(245,158,11,0.35);
+}
+
+/* =========================
+   MAIN
+========================= */
+.main{
+    margin-left:280px;
+
+    width:calc(100% - 280px);
+
+    min-height:100vh;
+
+    padding:35px;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar{
+    margin-bottom:30px;
+}
+
+.topbar h1{
+    font-size:36px;
+    font-weight:800;
+
+    margin-bottom:8px;
+}
+
+.topbar p{
+    color:#94a3b8;
+    font-size:15px;
+}
+
+/* =========================
+   FORM
+========================= */
+.form-grid{
+    background:rgba(17,24,39,0.85);
+
+    border:1px solid rgba(255,255,255,0.06);
+
+    backdrop-filter:blur(12px);
+
+    padding:25px;
+
+    border-radius:22px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:18px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,0.45);
+}
+
+/* INPUTS */
+.form-grid input,
+.form-grid select{
+    padding:14px;
+
+    border:none;
+    outline:none;
+
+    border-radius:14px;
+
+    background:#0f172a;
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,0.05);
+
+    font-size:14px;
+}
+
+.form-grid input:focus,
+.form-grid select:focus{
+    border-color:#f59e0b;
+
+    box-shadow:0 0 15px rgba(245,158,11,0.25);
+}
+
+/* BUTTON */
+.form-grid button{
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#f59e0b,#ea580c);
+
+    color:#fff;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    font-size:15px;
+}
+
+.form-grid button:hover{
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 30px rgba(245,158,11,0.35);
+}
+
+/* =========================
+   SALES BUTTON
+========================= */
+.sales-area{
+    display:flex;
+    justify-content:flex-end;
+
+    margin-bottom:25px;
+}
+
+.sales-link{
+    text-decoration:none;
+}
+
+.sales-btn{
+    padding:14px 20px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+    color:#fff;
+
+    font-size:14px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.sales-btn i{
+    margin-right:8px;
+}
+
+.sales-btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(37,99,235,0.35);
+}
+
+/* =========================
+   TABLE
+========================= */
+.table-wrapper{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+
+    border-collapse:collapse;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    background:rgba(15,23,42,0.92);
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:0 20px 50px rgba(0,0,0,0.45);
+}
+
+/* HEAD */
+table th{
+    background:#1e293b;
+
+    color:#fff;
+
+    padding:18px;
+
+    text-align:center;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+/* BODY */
+table td{
+    padding:18px;
+
+    text-align:center;
+
+    color:#dbe4ee;
+
+    font-size:14px;
+
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+/* HOVER */
+table tr:hover{
+    background:rgba(255,255,255,0.03);
+}
+
+/* EMPTY */
+.empty-row{
+    padding:25px;
+    color:#94a3b8;
+}
+
+/* =========================
+   STATUS COLORS
+========================= */
+.status-normal{
+    color:#22c55e;
+    font-weight:700;
+}
+
+.status-low{
+    color:#f59e0b;
+    font-weight:700;
+}
+
+.status-critical{
+    color:#ef4444;
+    font-weight:700;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:1100px){
+
+    .sidebar{
+        width:100%;
+        height:auto;
+        position:relative;
+    }
+
+    .main{
+        margin-left:0;
+        width:100%;
+        padding:20px;
+    }
+
+    .wrapper{
+        flex-direction:column;
+    }
+}
+
+@media(max-width:768px){
+
+    .topbar h1{
+        font-size:28px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    table{
+        display:block;
+        overflow-x:auto;
+    }
+
+    .sales-area{
+        justify-content:center;
+    }
+}
