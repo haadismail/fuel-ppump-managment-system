@@ -1,6 +1,4 @@
-/* =========================
-   GLOBAL RESET
-========================= */
+
 *{
     margin:0;
     padding:0;
@@ -13,17 +11,13 @@ body{
     color:#fff;
 }
 
-/* =========================
-   LAYOUT
-========================= */
+
 .wrapper{
     display:flex;
     min-height:100vh;
 }
 
-/* =========================
-   SIDEBAR (SAME STYLE AS DASHBOARD)
-========================= */
+
 .sidebar{
     width:260px;
     background:#0f172a;
@@ -64,9 +58,7 @@ body{
     font-weight:700;
 }
 
-/* =========================
-   MAIN
-========================= */
+
 .main{
     margin-left:260px;
     padding:25px;
@@ -79,9 +71,7 @@ h2{
     margin-bottom:15px;
 }
 
-/* =========================
-   FILTER BAR
-========================= */
+
 form[method="GET"]{
     display:flex;
     gap:10px;
@@ -116,9 +106,7 @@ button:hover{
     background:#f97316;
 }
 
-/* =========================
-   FORM (KHATA INPUT)
-========================= */
+
 form[method="POST"]{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -140,9 +128,7 @@ form[method="POST"] button{
     font-size:15px;
 }
 
-/* =========================
-   TABLE DESIGN
-========================= */
+
 table{
     width:100%;
     border-collapse:collapse;
@@ -170,16 +156,11 @@ tr:hover{
     background:rgba(255,255,255,0.03);
 }
 
-/* =========================
-   STATUS COLORS
-========================= */
+
 .overdue{
     background:rgba(220,38,38,0.15);
 }
 
-/* =========================
-   STATUS TAGS
-========================= */
 .status-paid{
     color:#22c55e;
     font-weight:700;
@@ -190,9 +171,7 @@ tr:hover{
     font-weight:700;
 }
 
-/* =========================
-   BUTTON STYLES (TABLE)
-========================= */
+
 td button{
     padding:6px 10px;
     font-size:12px;
@@ -229,10 +208,6 @@ button:disabled{
     color:#9ca3af;
     cursor:not-allowed;
 }
-
-/* =========================
-   RESPONSIVE
-========================= */
 @media(max-width:1000px){
     form[method="POST"]{
         grid-template-columns:repeat(2,1fr);
